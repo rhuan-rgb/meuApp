@@ -13,10 +13,12 @@ export default function Login({navigation}){
            (response)=>{
                 console.log(response.data.message)
                 Alert.alert(response.data.message)
+                navigation.navigate("HomeScreen")
            },(error)=>{
                 console.log( error)
                 Alert.alert('Erro', error.response.data.error)
            }
+           
         )
     }
 
