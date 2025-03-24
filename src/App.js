@@ -1,4 +1,3 @@
-import { StyleSheet, Text, View, TextInput, Button } from "react-native";
 import Login from "./screens/LoginScreen";
 import Cadastro from "./screens/CadastroScreen";
 import {NavigationContainer} from "@react-navigation/native"
@@ -7,7 +6,7 @@ import CadastroEvento from "./screens/CadastroEventoScreen"
 import CadastroIngresso from "./screens/CadastroIngressoScreen"
 import CadastroOrganizador from "./screens/CadastroOrganizadorScreen"
 import HomeScreen from "./screens/HomeScreen"
-
+import Layout from "./components/Layout";
 
 const Stack = createStackNavigator();
 
@@ -15,7 +14,11 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Login" component={Login}/>
+        <Stack.Screen name="Login" component={()=>(
+          <Layout>
+            <Login/>
+          </Layout>
+        )}/>
         
         <Stack.Screen name="Cadastro" component={Cadastro}/>
 

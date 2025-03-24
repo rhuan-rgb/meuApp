@@ -43,6 +43,7 @@ export default function Login({ navigation }) {
           setUser({ ...user, email: value });
         }}
       />
+      
       <View style={styles.passwordContainer}>
         <TextInput
           style={styles.passwordInput}
@@ -82,11 +83,12 @@ const styles = StyleSheet.create({
   },
   input: {
     borderColor: "gray",
-    width: "100%",
+    width: "90%",
     height: 40,
     borderBottomWidth: 1,
     marginBottom: 20,
     paddingHorizontal: 10,
+    fontSize:20,
   },
   button: {
     backgroundColor: "green",
