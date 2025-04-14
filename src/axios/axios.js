@@ -12,7 +12,8 @@ const sheets = {
     postCadastro:(user)=>api.post("user", user),
     postOrganizador:(user)=>api.post("organizador", user),
     postEvento:(user)=>api.post("evento", user),
-    postIngresso:(user)=>api.post("ingresso", user)
+    postIngresso:(user)=>api.post("ingresso", user),
+    getEventos:() => api.get("evento"),
 }
 
 export default sheets;
