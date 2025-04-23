@@ -12,7 +12,7 @@ export default function Login() {
     const [user, setUser] = useState({
         email: '',
         password: '',
-        showPassword: false
+        showPassword: true
     })
 
     async function handleLogin() {
@@ -20,7 +20,7 @@ export default function Login() {
         .then(
             (response) => {
                 console.log(response.data.message)
-                navigation.navigate("Home")
+                navigation.navigate("EventosScreen")
             }, (error) => {
                 console.log(error)
                 Alert.alert(error.response.data.error)
