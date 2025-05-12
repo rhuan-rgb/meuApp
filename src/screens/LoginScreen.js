@@ -3,6 +3,14 @@ import { View, Text, TextInput, TouchableOpacity, Alert, StyleSheet, Button } fr
 import api from "../axios/axios"
 import {Ionicons} from "@expo/vector-icons"
 import {useNavigation} from "@react-navigation/native"
+import * as SecureStore from 'expo-secure-store'
+
+
+async function saveToken(token) {
+    await SecureStore.setItemAsync("token", token);
+    console.log(token);
+}
+
 
 
 export default function Login() {
@@ -21,6 +29,8 @@ export default function Login() {
             (response) => {
                 console.log(response.data.message)
                 navigation.navigate("EventosScreen")
+                //response.data 
+                saveToken(response.data.token);
             }, (error) => {
                 console.log(error)
                 Alert.alert(error.response.data.error)
