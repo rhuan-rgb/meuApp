@@ -8,7 +8,6 @@ import * as SecureStore from 'expo-secure-store'
 
 async function saveToken(token) {
     await SecureStore.setItemAsync("token", token);
-    console.log(token);
 }
 
 
